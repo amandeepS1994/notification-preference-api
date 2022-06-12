@@ -1,41 +1,16 @@
-package com.abidevel.notification.notificationpreferenceservice.model.entities;
+package com.abidevel.notification.notificationpreferenceservice.model.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-@Entity(name = "notification_preferences")
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class NotificationPreference {
+
+public class NotificationPreferenceDTO {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-    @Column(name = "customerId")
     private Long customerId;
-    @Column(name = "smsPreferenceFlag")
     private boolean smsPreferenceFlag;
-    @Column(name = "emailPreferenceFlag")
     private boolean emailPreferenceFlag;
-    @Column(name = "phoneNumber")
     private String phoneNumber;
-    @Column(name = "emailAddress")
     private String emailAddress;
-    @Column(name = "customerName")
-    private String customerName;
 
 
     public Long getId() {

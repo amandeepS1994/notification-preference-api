@@ -1,4 +1,4 @@
-INSERT INTO notification_preferences (customerId, smsPreferenceFlag, emailPreferenceFlag,phoneNumber,emailAddress) VALUES
-  ('123', false,true, '+6588232374','vamshi.kesetty@gmail.com'),
-  ('456', true,false, '+6588232374','thunders@gmail.com');
+INSERT INTO notification_preferences (customerId, customerName, smsPreferenceFlag, emailPreferenceFlag,phoneNumber,emailAddress) VALUES
+  ('123', 'devel', false,true, '+447510708396','amandeep1994g@gmail.com'),
+  ('456', 'devel2', true,false, '+447510708396','abidevel94@gmail.com');
 
