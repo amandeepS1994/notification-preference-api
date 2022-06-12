@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.abidevel.notification.notificationpreferenceservice.model.entities.NotificationPreference;
 import com.abidevel.notification.notificationpreferenceservice.model.response.ApiResponse;
 import com.abidevel.notification.notificationpreferenceservice.service.NotificationService;
+import com.abidevel.notification.notificationpreferenceservice.utility.ObjectMapperUtil;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,10 +29,10 @@ public class NotificationController {
     public ResponseEntity<ApiResponse<NotificationPreference>>retrievePreferenceInformation(@PathVariable long customerId) {
             Optional<NotificationPreference> notification = notificationService.retrieveCustomerPreference(customerId);
             if (notification.isPresent()) {
-                return new ResponseEntity<ApiResponse<NotificationPreference>>(new ApiResponse<>(true, notification.get()), HttpStatus.ACCEPTED);
+                return new ResponseEntity<>(new ApiResponse<>(true,  ObjectMapperUtil.mapEntity(notification.get(), NotificationPreference.class)), HttpStatus.ACCEPTED);
             }
 
-            return new ResponseEntity<ApiResponse<NotificationPreference>>(new ApiResponse<>(false, "Customer Not Found"), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new ApiResponse<>(false, "Customer Not Found"), HttpStatus.NOT_FOUND);
         
 
     }
