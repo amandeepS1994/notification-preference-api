@@ -1,4 +1,4 @@
-package com.abidevel.notification.notificationpreferenceservice;
+ package com.abidevel.notification.notificationpreferenceservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
